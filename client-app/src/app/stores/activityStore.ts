@@ -176,14 +176,14 @@ export default class ActivityStore {
     }
 
     updateAttendeeFollowing = (username: string) => {
-        // this.activityRegistry.forEach(activity => {
-        //     activity.attendees.forEach(attendee => {
-        //         if (attendee.username === username) {
-        //             attendee.following ? attendee.followersCount-- : attendee.followersCount++;
-        //             attendee.following = !attendee.following;
-        //         }
-        //     })
-        // })
+        this.activityRegistry.forEach(activity => {
+            activity.attendees.forEach(attendee => {
+                if (attendee.username === username) {
+                    attendee.following ? attendee.followersCount-- : attendee.followersCount++;
+                    attendee.following = !attendee.following;
+                }
+            })
+        })
     }
 
     clearSelectedActivity = () => {
